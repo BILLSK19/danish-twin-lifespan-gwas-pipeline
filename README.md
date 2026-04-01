@@ -2,9 +2,9 @@
 
 ![R](https://img.shields.io/badge/R-analysis-276DC3?logo=r&logoColor=white) ![PLINK](https://img.shields.io/badge/PLINK-1.9-0A7F8C) ![GCTA](https://img.shields.io/badge/GCTA-fastGWA-4C956C) ![License](https://img.shields.io/badge/license-MIT-black)
 
-A reproducible analysis repository for Danish twin lifespan research and downstream GWAS. The project combines descriptive survival analyses in R with genotype QC, GRM construction, and association testing using PLINK and GCTA.
+Code for Danish twin lifespan analyses and a GWAS workflow built with R, PLINK, and GCTA.
 
-Core outputs include:
+Main outputs:
 
 - lifespan and conditional cotwin lifespan figures
 - a survival-threshold summary table for twin pairs
@@ -13,7 +13,7 @@ Core outputs include:
 
 ## What The Project Does
 
-The repository includes two connected pieces of work:
+The project has two main parts:
 
 1. It analyzes twin lifespan data from a Danish cohort by:
    - plotting lifespan trajectories over birth year with age/year jittering for de-identification
@@ -78,9 +78,9 @@ Copy the example config and update the absolute paths:
 cp config/project.env.example config/project.env
 ```
 
-## Reproducibility
+## Environment
 
-This repository is organized to run from a clean clone with local path configuration stored in `config/project.env`. A minimal working environment is:
+Local paths are set in `config/project.env`. A minimal setup is:
 
 - R 4.3 or newer
 - `dplyr`
@@ -108,16 +108,16 @@ make grm
 make gwas
 ```
 
-You can also run scripts individually, for example:
+Individual scripts can also be run directly:
 
 ```bash
 Rscript scripts/r/01_plot_lifespan_scatter.R data/lifespan_data.rds figures/lifespan_scatter.png
 bash scripts/bash/01_filter_genotypes.sh
 ```
 
-## Assumptions And Gaps
+## Notes
 
 - Raw data and sample files are not stored in this repository.
 - The GWAS plotting scripts assume summary statistics contain at least `CHR`, `POS`, and `P`.
-- The shell scripts now use config-driven paths, but they still depend on your local genetics data layout matching the original folder naming convention (`Chr1` to `Chr22`, `bestguess_chr*`, `infofile_chr*.txt`).
-- A dense GRM build is included because that was present in the original scripts, but sparse GRM creation or LD pruning steps are not implemented here.
+- The shell scripts expect the genetics data layout to follow the folder naming pattern `Chr1` to `Chr22`, with `bestguess_chr*` and `infofile_chr*.txt` files.
+- Dense GRM construction is included. Sparse GRM creation and LD pruning are not included in this repository.
