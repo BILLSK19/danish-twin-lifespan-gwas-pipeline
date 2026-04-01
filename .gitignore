@@ -1,0 +1,13 @@
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+config/project.env
+data/*
+!data/.gitkeep
+figures/*
+!figures/.gitkeep
+results/*
+!results/.gitkeep
+*.log
+*.tmp
