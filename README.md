@@ -31,7 +31,6 @@ The repository includes two connected pieces of work:
 ```text
 config/      Environment-specific paths and tool configuration
 data/        Input data placeholders (ignored by Git)
-docs/        Notes and archived fragments from the original folder
 figures/     Generated plots (ignored by Git)
 results/     Generated tables and GWAS outputs (ignored by Git)
 scripts/
@@ -53,8 +52,6 @@ The original numbered fragments were renamed into descriptive files:
 - `part_5.sh` -> `scripts/bash/04_run_fastgwa.sh`
 - `part_6.sh` -> `scripts/r/04_plot_manhattan.R`
 - `part_7.sh` -> `scripts/r/05_plot_qq.R`
-
-`part_2.sh` was a duplicate of the original QC script, so it was archived at `docs/duplicate_qc_fragment.sh`.
 
 ## Setup
 
