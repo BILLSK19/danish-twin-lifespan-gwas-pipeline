@@ -3,7 +3,7 @@ SHELL := /bin/bash
 LIFESPAN_DATA ?= data/lifespan_data.rds
 GWAS_DATA ?= results/gwas_summary_stats.tsv
 
-.PHONY: help plots tables qc merge grm gwas
+.PHONY: help plots tables qc merge grm gwas genomicsem
 
 help:
 	@printf "Targets:\n"
@@ -34,3 +34,7 @@ grm:
 
 gwas:
 	bash scripts/bash/04_run_fastgwa.sh
+
+
+genomicsem:
+	Rscript scripts/r/06_run_genomicsem_hdl.R
