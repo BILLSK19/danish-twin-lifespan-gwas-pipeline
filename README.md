@@ -117,7 +117,7 @@ bash scripts/bash/01_filter_genotypes.sh
 
 ## Assumptions And Gaps
 
-- No raw data or sample files are included in the repository, so input files should match the column names used by the analysis scripts.
+- Raw data and sample files are not stored in this repository.
 - The GWAS plotting scripts assume summary statistics contain at least `CHR`, `POS`, and `P`.
 - The shell scripts now use config-driven paths, but they still depend on your local genetics data layout matching the original folder naming convention (`Chr1` to `Chr22`, `bestguess_chr*`, `infofile_chr*.txt`).
 - A dense GRM build is included because that was present in the original scripts, but sparse GRM creation or LD pruning steps are not implemented here.
